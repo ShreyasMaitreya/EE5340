@@ -1,0 +1,40 @@
+# Load the library
+library('QuantumOps')
+
+# Initialize a qubit in the |0〉 state
+qubit <- ket(1,0)
+
+# Display the state vector
+print('Problem1')
+print(qubit)
+
+#dirac representation
+print(dirac(qubit))
+
+#report probability
+print(probs(qubit))
+plotprobs(qubit)
+
+#applying pauli gate
+print('Problem 2')
+pauli <- X()
+print(pauli %*% qubit)
+print(dirac(pauli %*% qubit))
+print(probs(pauli %*% qubit))
+plotprobs((pauli %*% qubit))
+
+#with qubit state  sqrt(1/3) |0⟩ + sqrt(2/3) |1⟩
+qubit2 <- ket(sqrt(1/3),sqrt(2/3))
+
+# Display the state vector
+print('Problem 3')
+print(qubit2)
+print(dirac(qubit2))
+print(probs(qubit2))
+plotprobs(qubit2)
+
+#Apply pauli gate
+print(pauli %*% qubit2)
+print(dirac(pauli %*% qubit2))
+print(probs(pauli %*% qubit2))
+plotprobs((pauli %*% qubit2))
